@@ -3,3 +3,26 @@ ukyanne:
   name: ukyanne hatahata
   email: ukyanne@example.com
   password_digest: <%= User.digest('password') %>
+  admin: true
+
+other:
+  name: wrong man
+  email: wrong@man.com
+  password_digest: <%= User.digest('password') %> 
+
+other2:
+  name: razer nari
+  email: razer@nari.com
+  password_digest: <%= User.digest('password') %>
+
+other3:
+  name: steel series
+  email: steel@series.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
