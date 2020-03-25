@@ -72,12 +72,12 @@ Rails.application.configure do
   host = 'ukyanne-rails-tutorial-sample.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :user_name => 'apikey',
-    :password => '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',
-    :domain => 'heroku.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
+    :adresss => 'smtp.sendgrid.net',
+    :port => '587',
     :authentication => :plain,
+    :user_name => ENV['SEND_NAME'],
+    :password => ENV['SEND_PASS'],
+    :domain => 'heroku.com',
     :enable_starttls_auto => true
   }
 
